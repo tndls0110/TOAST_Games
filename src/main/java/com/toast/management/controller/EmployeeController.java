@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.toast.dataconfig.DataConfig;
 import com.toast.management.service.EmployeeService;
+
+
 
 @Controller
 public class EmployeeController {
@@ -19,10 +22,13 @@ public class EmployeeController {
 	
 	@Autowired PasswordEncoder encoder;
 	
+	
+
 	private final EmployeeService employeeService;
 	
 	public EmployeeController(EmployeeService employeeService) {
 		this.employeeService = employeeService;
+	
 	}
 	
 	@GetMapping(value="/employeeAdd.go")
@@ -34,11 +40,9 @@ public class EmployeeController {
 	@PostMapping(value="/employeeAdd.do")
 	public String employeeAddDo(@RequestParam Map<String,String> param) {
 		
-		String pw = param.get("empl_pw");
 		
-		String encodepw = encoder.encode(pw);
 		
-		param.put("empl_pw", encodepw);
+		employeeService.employeeAdd(param);
 		
 		return "";
 	}

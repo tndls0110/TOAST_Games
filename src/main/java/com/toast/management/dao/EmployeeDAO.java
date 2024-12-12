@@ -8,5 +8,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface EmployeeDAO {
 
 	int employeeAdd(Map<String, String> param);
-
+	
 }

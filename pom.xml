@@ -37,6 +37,12 @@
 		</dependency>
 		
 		
+		<!-- AES 암호화 -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>1.15</version> <!-- 최신 버전을 확인 후 사용 -->
+		</dependency>
 		
 		<!-- spring security -->
 		<dependency>
