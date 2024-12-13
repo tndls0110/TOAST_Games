@@ -1,5 +1,8 @@
 package com.toast.management.service;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.UUID;
 
@@ -8,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.toast.dataconfig.DataConfig;
 import com.toast.management.dao.EmployeeDAO;
@@ -60,6 +64,9 @@ public class EmployeeService {
 		
 		employeeDAO.employeeAdd(param);
 		
-	}
+		
+		
+	} // employeeAdd(MultipartFile[] files, Map<String, String> param)
 
+	
 }
