@@ -35,16 +35,16 @@
         <div class="result_box tst_flex">
             <h1 class="tst_flex align_middle">${email}</h1>
         </div>
+        <p>비밀번호를 받지 못하셨다면 인사과(본관 306호)에 방문하여 직접 임시 비밀번호를 발급받으시기 바랍니다.</p>
+        <hr class="separator" />
 
         <!-- 버튼 -->
         <ul class="list_no_desc list_block">
             <li>
-                <input type="button" value="인사과에 문의하기" onclick="location.href='/'" class="btn_full btn_primary" />
-            </li>
-            <li>
-                <input type="button" value="로그인 화면으로 돌아가기" onclick="location.href='/'" class="btn_full btn_text" />
+                <input type="button" value="로그인 화면으로 돌아가기" onclick="location.href='/'" class="btn_full btn_secondary" />
             </li>
         </ul>
+
     </div>
 </div>
 </body>

@@ -336,8 +336,8 @@ button.btn_full{
 }
 
 .btn_secondary{
-    border-color: var(--tst-color-info);
-    background-color: var(--tst-color-info);
+    border-color: var(--tst-color-medium);
+    background-color: var(--tst-color-medium);
     color: var(--tst-color-white);
 }
 
