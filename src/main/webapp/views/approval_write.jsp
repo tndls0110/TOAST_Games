@@ -1,19 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ryust
-  Date: 24. 12. 16.
-  Time: 오전 9:26
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="res/style.css" />
-  <link rel="stylesheet" href="richtexteditor/rte_theme_default.css" />
-  <script type="text/javascript" src="richtexteditor/rte.js"></script>
-  <script type="text/javascript" src='richtexteditor/plugins/all_plugins.js'></script>
+  <link rel="stylesheet" href="/richtexteditor/res/style.css" />
+  <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
+  <link rel="stylesheet" href="/richtexteditor/runtime/richtexteditor_content.css">
+
+  <script type="text/javascript" src="/richtexteditor/rte.js"></script>
+  <script type="text/javascript" src="/richtexteditor/plugins/all_plugins.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
