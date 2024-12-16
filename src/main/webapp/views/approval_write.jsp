@@ -13,8 +13,16 @@
 </head>
 <body>
 
+
+  <div>${form_content}</div>
+
+  <div>${form_idx}</div>
+
+
 </body>
 <script>
-  console.log(${"data"});
+
+
+
 </script>
 </html>

@@ -6,10 +6,7 @@ import org.springframework.stereotype.Controller;
 
 import com.toast.approval.service.ApprovalService;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.HashMap;
@@ -50,13 +47,24 @@ public class ApprovalController {
 		return data;
 	}
 
-	@PostMapping(value = "/approval_doc_write.ajax")
-	@ResponseBody
-	public String approval_doc_write(Model model,String data) {
-		//Map<String, Object> data = new HashMap<String, Object>();
+//	@PostMapping(value = "/approval_doc_write.ajax")
+//	@ResponseBody
+//	public Map<String,Object> approval_doc_write(Model model,String content,int form_idx) {
+//		logger.info("approval_doc_write 컨트롤러 도착");
+//
+//
+//		return ;
+//	}
 
-		//바로 값을 다른 뷰로 보내기
-		model.addAttribute("data", data);
+	@RequestMapping (value = "/approval_write.go")
+	public String approvalWrite_go (Model model, int form_idx, String form_content) {
+		logger.info("approvalWrite_go 컨트롤러 도착");
+		logger.info("idx: " + form_idx);
+		logger.info("content: " + form_content);
+
+		model.addAttribute("form_content", form_content);
+		model.addAttribute("form_idx", form_idx);
+
 		return "approval_write";
 	}
 }

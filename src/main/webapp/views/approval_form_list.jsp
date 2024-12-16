@@ -16,9 +16,14 @@
 
 </div>
 
+
 <div class = "form_wrapper">
-    <div id = "html_rendering">
-    </div>
+    <form action="approval_write.go" method="POST">
+        <input type="hidden" name = "form_idx" id = "form_idx"/>
+        <div id = "html_rendering">
+        </div>
+        <input type="hidden" name = "form_content" id = "form_content"/>
+    </form>
     <div id = "button_wrapper">
     </div>
 </div>
@@ -70,12 +75,19 @@
 
     function draw_html(content,idx){
 
+        //화면 단에 보이는 값 넣기
         $('#html_rendering').html(content);
+        console.log("content",content);
+
+        //form으로 보낼 값들 넣기
+        $('#form_content').val(content);
+        $('#form_idx').val(idx);
+
         $('#button_wrapper').html('<div class="choose_form_button">문서 선택</div>');
 
         // 이벤트 위임을 사용하여 클릭 이벤트 처리
         $('#button_wrapper').on('click', '.choose_form_button', function() {
-            form_load(idx);
+            $('form').submit();
         });
     }
 
@@ -83,24 +95,35 @@
 
 
 
-    function form_load(idx){
-        var content = $('#html_rendering').html;
+
+
+    //+버튼 누르면 열 추가
+    //append
+    var i = 2;
+    $('#plus1').on('click',function(){
+
+        console.log("추가버튼");
+        var content = '<tr class="copyRow"><td class="BCel center copyRowNo1 dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l"><p>'+i+'</p></td><td class="BCel center dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l" contenteditable="false"></td><td class="BCel center dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l" contenteditable="false"></td><td class="BCel center dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l" contenteditable="false"></td><td class="BCel center dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l" contenteditable="false"></td><td class="BCel center dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l" contenteditable="false"></td></tr>';
         console.log(content);
-        $.ajax({
-            type : 'POST',
-            url : 'approval_doc_write.ajax',
-            data : {'content':content},
-            dataType : 'JSON',
-            success : function(data){
-                console.log(data);
+        $('.copyRow').last().after(content);
+        i++;
 
-                //다른 페이지로 넘기는 법
-                //window.location.href = '/approval_doc_write.go?idx='+idx;
-            }, error : function(e){
-                console.log(e);
-            }
-        });
-    }
+    });
+
+
+    //-버튼 누르면 열 삭제
+
+    $('#minus1').on('click',function(){
+        console.log("삭제버튼");
+        if(i>2){
+            $('.copyRow').last().remove();
+            i--;
+        }
+    });
+
+
+
+
 
 </script>
 </html>
