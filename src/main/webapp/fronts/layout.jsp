@@ -13,7 +13,7 @@
 <div class="tst_topnav">
     <div class="tst_wrapper tst_flex align_middle">
         <div class="tst_col2 logo align_middle">
-            <img src="/resources/img/logo.jpg" alt="" />TOAST Games
+            <img src="/resources/img/logo.jpg" alt="" />
         </div>
         <ul class="tst_col8 align_center list_no_desc list_inline">
             <li>
@@ -35,7 +35,7 @@
         <div class="tst_col2"></div>
     </div>
 </div>
-<div class="tst_container tst_flex">
+<div class="tst_container">
     <div class="tst_container_left">
         <div class="tst_contents tst_leftnav">
             <div class="tst_contents_inner">
@@ -44,7 +44,8 @@
                         <p>근태 관리</p>
                     </li>
                 </ul>
-                <ul class="list_no_desc list_block">
+                <hr class="separator" />
+                <ul class="list_no_desc list_block disp_hide">
                     <li class="tst_pointer">
                         <i class="bi bi-search"></i><h3>빠른 검색</h3>
                     </li>
@@ -52,8 +53,9 @@
                         <i class="bi bi-bell-fill"></i><h3>알림</h3>
                     </li>
                 </ul>
+                <hr class="separator" />
                 <ul class="list_no_desc list_block">
-                    <li class="tst_pointer">
+                    <li class="tst_pointer disp_hide">
                         <i class="bi bi-menu-button-wide-fill"></i><h3>대시보드</h3>
                     </li>
                     <li class="tst_pointer">
@@ -71,10 +73,10 @@
                     <li class="tst_pointer">
                         <i class="bi bi-layout-text-window-reverse"></i><h3>전자 게시판</h3>
                     </li>
-                    <li class="tst_pointer">
+                    <li class="tst_pointer disp_hide">
                         <i class="bi bi-megaphone-fill"></i><h3>공지사항</h3>
                     </li>
-                    <li class="tst_pointer">
+                    <li class="tst_pointer disp_hide">
                         <i class="bi bi-send-fill"></i><h3>메시지</h3>
                     </li>
                     <li class="tst_pointer">
@@ -95,10 +97,10 @@
                     <li class="tst_pointer">
                         <i class="bi bi-people-fill"></i><h3>구성원 관리</h3>
                     </li>
-                    <li class="tst_pointer">
+                    <li class="tst_pointer disp_hide">
                         <i class="bi bi-stopwatch-fill"></i><h3>근태 관리</h3>
                     </li>
-                    <li class="tst_pointer">
+                    <li class="tst_pointer disp_hide">
                         <i class="bi bi-luggage-fill"></i><h3>연차 관리</h3>
                     </li>
                     <li class="tst_pointer">
