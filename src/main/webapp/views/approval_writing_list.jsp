@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <a href="approval_write.do">작성하기</a>
+    <a href="approval_form_list.go">문서 양식 검색하기</a>
 </body>
 </html>
