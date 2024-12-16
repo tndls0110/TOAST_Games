@@ -38,12 +38,6 @@
 		
 		
 		
-		<!-- spring security -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		
 		<!-- web socket -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
