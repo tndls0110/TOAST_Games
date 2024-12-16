@@ -22,9 +22,13 @@
 </div>
 <div class="tst_container">
     <div class="login_box">
+
+        <!-- 제목 -->
         <div class="logo_box">
             <h1>TOAST Games</h1>
         </div>
+
+        <!-- 입력폼 -->
         <form>
             <ul class="list_no_desc list_block">
                 <li>
@@ -62,7 +66,7 @@
                 <p class="min font_caution">비밀번호를 확인하세요.</p>
             </li>
         </ul>
-        <!-- //로그인 오류 발생시 입력창을 아래와 같이 변경하세요. -->
+        <!-- //로그인 오류 발생시 입력창의 클래스를 위와 같이 변경하세요. -->
 
     </div>
 </div>

@@ -22,9 +22,13 @@
 </div>
 <div class="tst_container">
     <div class="login_box">
+
+        <!-- 제목 -->
         <div>
             <h1>ID/비밀번호 찾기</h1>
         </div>
+
+        <!-- 탭 메뉴 -->
         <ul class="list_no_desc list_tab">
             <li class="list_tab_item list_tab_item_active">
                 ID찾기
@@ -33,6 +37,8 @@
                 비밀번호찾기
             </li>
         </ul>
+
+        <!-- 입력 폼 -->
         <form>
             <ul class="list_no_desc list_block">
                 <li>
@@ -70,7 +76,7 @@
                 <p class="min font_caution">이메일을 확인하세요.</p>
             </li>
         </ul>
-        <!-- //오류 발생시 입력창을 아래와 같이 변경하세요. -->
+        <!-- //오류 발생시 입력창 클래스를 위와 같이 변경하세요. -->
 
     </div>
 </div>
