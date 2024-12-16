@@ -27,3 +27,11 @@ input[type="password"].input_caution{
 .list_tab {
     border-color: var(--tst-color-white);
 }
+
+.result_box{
+    height: 180px;
+}
+
+.result_box h1{
+    margin: 0 auto;
+}

@@ -11,15 +11,7 @@
     <link rel="stylesheet" type="text/css" href="resources/css/login.css" />
 </head>
 <body>
-<div class="tst_topnav">
-    <div class="tst_wrapper tst_flex align_middle">
-        <div class="tst_col2 logo align_middle">
-            <img src="resources/img/logo.jpg" alt="" />
-        </div>
-        <ul class="tst_col8"></ul>
-        <div class="tst_col2"></div>
-    </div>
-</div>
+<c:import url="layout_topnav_empty.jsp" />
 <div class="tst_container">
     <div class="login_box">
 
@@ -33,7 +25,7 @@
             <li class="list_tab_item list_tab_item_active">
                 ID찾기
             </li>
-            <li class="list_tab_item">
+            <li class="list_tab_item" onclick="location.href='/'">
                 비밀번호찾기
             </li>
         </ul>
@@ -44,21 +36,21 @@
                 <li>
                     <label class="form_label">이름</label>
                     <input type="text" name="name" maxlength="50" placeholder="이름을 입력하세요" />
-                    <p class="min font_caution disp_hide">이름을 확인하세요.</p>
+                    <p class="min font_caution disp_hide">이름이 존재하지 않습니다.</p>
                 </li>
                 <li>
                     <label class="form_label">이메일</label>
                     <input type="text" name="email" maxlength="50" placeholder="이메일을 입력하세요" />
-                    <p class="min font_caution disp_hide">이메일을 확인하세요.</p>
+                    <p class="min font_caution disp_hide">이메일이 존재하지 않습니다.</p>
                 </li>
                 <li>
                     <hr class="separator" />
                 </li>
                 <li>
-                    <input type="submit" value="ID 찾기" class="btn_full btn_primary" />
+                    <input type="submit" value="ID 찾기" onclick="location.href='/'" class="btn_full btn_primary" />
                 </li>
                 <li>
-                    <input type="button" value="로그인 화면으로 돌아가기" class="btn_full btn_text" />
+                    <input type="button" value="로그인 화면으로 돌아가기" onclick="location.href='/'" class="btn_full btn_text" />
                 </li>
             </ul>
         </form>
@@ -68,12 +60,12 @@
             <li>
                 <label class="form_label">이름</label>
                 <input type="text" name="name" maxlength="50" placeholder="이름을 입력하세요" class="input_caution" />
-                <p class="min font_caution">이름을 확인하세요.</p>
+                <p class="min font_caution">이름이 존재하지 않습니다.</p>
             </li>
             <li>
                 <label class="form_label">이메일</label>
                 <input type="text" name="email" maxlength="50" placeholder="이메일을 입력하세요" class="input_caution" />
-                <p class="min font_caution">이메일을 확인하세요.</p>
+                <p class="min font_caution">이메일이 존재하지 않습니다.</p>
             </li>
         </ul>
         <!-- //오류 발생시 입력창 클래스를 위와 같이 변경하세요. -->

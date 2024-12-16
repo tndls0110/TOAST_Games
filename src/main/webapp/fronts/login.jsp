@@ -11,15 +11,7 @@
     <link rel="stylesheet" type="text/css" href="resources/css/login.css" />
 </head>
 <body>
-<div class="tst_topnav">
-    <div class="tst_wrapper tst_flex align_middle">
-        <div class="tst_col2 logo align_middle">
-            <img src="/resources/img/logo.jpg" alt="" />TOAST Games
-        </div>
-        <ul class="tst_col8"></ul>
-        <div class="tst_col2"></div>
-    </div>
-</div>
+<c:import url="layout_topnav_empty.jsp" />
 <div class="tst_container">
     <div class="login_box">
 
