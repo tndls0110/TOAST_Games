@@ -23,3 +23,7 @@ input[type="text"].input_caution,
 input[type="password"].input_caution{
     border-color: var(--tst-form-invalid-border-color);
 }
+
+.list_tab {
+    border-color: var(--tst-color-white);
+}

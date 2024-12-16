@@ -28,12 +28,12 @@
         <form>
             <ul class="list_no_desc list_block">
                 <li>
-                    <label for="id" class="form_label">Identification</label>
+                    <label class="form_label">Identification</label>
                     <input type="text" name="id" maxlength="50" placeholder="아이디를 입력하세요" />
                     <p class="min font_caution disp_hide">아이디를 확인하세요.</p>
                 </li>
                 <li>
-                    <label for="pw" class="form_label">Passwords</label>
+                    <label class="form_label">Passwords</label>
                     <input type="password" name="pw" maxlength="50" placeholder="비밀번호를 입력하세요" />
                     <p class="min font_caution disp_hide">비밀번호를 확인하세요.</p>
                 </li>
@@ -49,19 +49,21 @@
             </ul>
         </form>
 
-        <!-- 로그인 오류 발생시 입력창을 아래와 같이 변경하세요. -->
+        <!-- 로그인 오류 발생시 입력창의 클래스을 아래와 같이 변경하세요. -->
         <ul class="list_no_desc list_block">
             <li>
-                <label for="id" class="form_label">Identification</label>
+                <label class="form_label">Identification</label>
                 <input type="text" name="id" maxlength="50" placeholder="아이디를 입력하세요" class="input_caution" />
                 <p class="min font_caution">아이디를 확인하세요.</p>
             </li>
             <li>
-                <label for="pw" class="form_label">Passwords</label>
+                <label class="form_label">Passwords</label>
                 <input type="password" name="pw" maxlength="50" placeholder="비밀번호를 입력하세요" class="input_caution" />
                 <p class="min font_caution">비밀번호를 확인하세요.</p>
             </li>
         </ul>
+        <!-- //로그인 오류 발생시 입력창을 아래와 같이 변경하세요. -->
+
     </div>
 </div>
 </body>

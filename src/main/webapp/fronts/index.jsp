@@ -11,29 +11,18 @@
     <link rel="stylesheet" type="text/css" href="resources/css/login.css" />
 </head>
 <body>
-<div class="tst_topnav">
-    <div class="tst_wrapper tst_flex align_middle">
-        <div class="tst_col2 logo align_middle">
-            <img src="/resources/img/logo.jpg" alt="" />TOAST Games
-        </div>
-        <ul class="tst_col8"></ul>
-        <div class="tst_col2"></div>
-    </div>
-</div>
+<c:import url="layout_topnav_empty.jsp" />
 <div class="tst_container">
     <div class="login_box">
-        <div class="logo_box">
-            <h1>TOAST Games</h1>
-        </div>
         <form>
             <ul class="list_no_desc list_block">
                 <li>
-                    <label for="id" class="form_label">Identification</label>
+                    <label class="form_label">Identification</label>
                     <input type="text" name="id" maxlength="50" placeholder="아이디를 입력하세요" />
                     <p class="min font_caution disp_hide">아이디를 확인하세요.</p>
                 </li>
                 <li>
-                    <label for="pw" class="form_label">Passwords</label>
+                    <label class="form_label">Passwords</label>
                     <input type="password" name="pw" maxlength="50" placeholder="비밀번호를 입력하세요" />
                     <p class="min font_caution disp_hide">비밀번호를 확인하세요.</p>
                 </li>

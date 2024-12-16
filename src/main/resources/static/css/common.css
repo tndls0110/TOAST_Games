@@ -249,6 +249,32 @@ p.min{
 
 
 
+/* list > tab menu */
+
+.list_tab{
+    width: 100%;
+    margin: var(--tst-margin-vertical) 0;
+    padding: 0;
+    border-bottom: var(--tst-border-width) var(--tst-border-style) var(--tst-border-color);
+}
+
+.list_tab .list_tab_item{
+    margin: 0 0 -1px;
+    padding: var(--tst-form-padding);
+    color: var(--tst-color-medium);
+    font-weight: 400;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.list_tab .list_tab_item.list_tab_item_active{
+    border-bottom: 2px var(--tst-border-style) var(--tst-color-medium);
+    color: var(--tst-body-color);
+    font-weight: 600;
+}
+
+
+
 /* form, button */
 
 label.form_label{
