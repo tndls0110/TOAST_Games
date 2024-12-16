@@ -115,6 +115,10 @@ p.min{
     color: var(--tst-color-warning);
 }
 
+.tst_title{
+    margin: 0 0 24px;
+}
+
 
 
 /* flex */
@@ -237,7 +241,7 @@ p.min{
 
 .list_no_desc.list_inline li{
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 46px 0 -36px;
     padding: 0;
 }
 
@@ -271,6 +275,14 @@ p.min{
     border-bottom: 2px var(--tst-border-style) var(--tst-color-medium);
     color: var(--tst-body-color);
     font-weight: 600;
+}
+
+
+
+/* list > title tab */
+
+ul.tst_title.list_no_desc{
+    margin: 0 0 24px;
 }
 
 
