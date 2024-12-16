@@ -47,14 +47,7 @@ public class ApprovalController {
 		return data;
 	}
 
-//	@PostMapping(value = "/approval_doc_write.ajax")
-//	@ResponseBody
-//	public Map<String,Object> approval_doc_write(Model model,String content,int form_idx) {
-//		logger.info("approval_doc_write 컨트롤러 도착");
-//
-//
-//		return ;
-//	}
+
 
 	@RequestMapping (value = "/approval_write.go")
 	public String approvalWrite_go (Model model, int form_idx, String form_content) {
@@ -62,9 +55,21 @@ public class ApprovalController {
 		logger.info("idx: " + form_idx);
 		logger.info("content: " + form_content);
 
+		//세션 처리
+		String login_id = "rrarro845";
+
+		//작성하기
+			//작성하기부터는 update로 하기
+		approvalService.doc_write(form_idx,form_content,login_id);
+		
+
+
 		model.addAttribute("form_content", form_content);
 		model.addAttribute("form_idx", form_idx);
 
 		return "approval_write";
 	}
+
+
+
 }
