@@ -12,7 +12,16 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+<div id = "content_box">
 
+</div>
+
+<div class = "form_wrapper">
+    <div id = "html_rendering">
+    </div>
+    <div id = "button_wrapper">
+    </div>
+</div>
 </body>
 <script>
     window.onload = function initialize(){
