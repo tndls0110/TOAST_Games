@@ -7,11 +7,6 @@ body {
 	margin: 0px
 }
 
-table td, table th {
-    height: 50px;  /* 셀의 높이를 50px로 고정 */
-}
-
-
 body, table, p, div {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #414141;
@@ -103,7 +98,7 @@ table {
 	}
 
 	table[border="0"] td, table:not([border]) td, table[border="0"] th, table:not([border]) th {
-		border: 1px solid black;
+		border: 1px solid #ddd;
 	}
 
 thead {
@@ -114,7 +109,7 @@ thead {
 	padding: 8px;
 	line-height: 1.42857143;
 	vertical-align: top;
-	border-top: 1px solid black;
+	border-top: 1px solid #ddd;
 }
 
 video-container {
