@@ -9,7 +9,7 @@ public class MeetingDTO {
 	private String room_addr;
 	private int room_empl_idx;
 	private String room_info;
-	private int file_key; //실제 프로젝트에서 변경 바람
+	private String file_key; //실제 프로젝트에서 변경 바람
 	private int room_min;
 	private int room_max;
 	
@@ -24,6 +24,8 @@ public class MeetingDTO {
 	private int meet_parti_idx;
 	//private int meet_rent_idx;
 	private int meet_parti_empl_idx;
+	
+	
 	public int getRoom_idx() {
 		return room_idx;
 	}
@@ -54,10 +56,10 @@ public class MeetingDTO {
 	public void setRoom_info(String room_info) {
 		this.room_info = room_info;
 	}
-	public int getFile_key() {
+	public String getFile_key() {
 		return file_key;
 	}
-	public void setFile_key(int file_key) {
+	public void setFile_key(String file_key) {
 		this.file_key = file_key;
 	}
 	public int getRoom_min() {
