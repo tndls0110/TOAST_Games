@@ -16,6 +16,7 @@ table, th, td{
 </head>
 <body>
 <div>
+	<!-- 관리자의 회의실 추가 페이지 -->
 	<form action="/meeting/meetingRoom.add" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>

@@ -150,10 +150,7 @@ public class MeetingService {
 	public int dateUpdateMeeting(MeetingDTO dto) {
 		return meetingDao.dateUpdateMeeting(dto);
 	}
-	
 
-	
-	
 	//내가 포함된 일정만 보기
 	
 	

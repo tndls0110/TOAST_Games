@@ -13,6 +13,7 @@ table, th, td{
 </style>
 </head>
 <body>
+<!-- 회의실 상세보기 페이지 -->
 <div>
 	<table>
 		<tr>

@@ -11,6 +11,30 @@
 		SELECT room_idx, room_name FROM meeting_room
 	</select>
 	
+	<!-- 회의실 (정보) 추가 -->
+	<insert 
+		id="roomAdd" 
+		useGeneratedKeys="true"
+		keyColumn="room_idx"
+		keyProperty="room_idx" 
+		parameterType="com.toast.schedule.dto.MeetingDTO">
+		INSERT INTO meeting_room(room_name,room_addr, room_empl_idx, room_info, room_min, room_max)
+			VALUES(#{room_name}, #{room_addr}, #{room_empl_idx}, #{room_info}, #{room_min}, #{room_max})
+	</insert>
+	<!-- 첨부파일 키 추가  -->
+	<insert id="roomKeyAdd">
+		UPDATE meeting_room SET file_key=#{param1} WHERE room_idx=#{param2}
+	</insert>
+	
+	<!-- 회의실 사진 추가 -->
+	<insert id="roomFileAdd"
+		useGeneratedKeys="true"
+		keyColumn="file_key"
+		keyProperty="file_key" 
+		parameterType="com.toast.schedule.dto.MeetingPhoto">
+		INSERT INTO file(file_key, uploader_idx, ori_filename, new_filename, file_type, file_addr)
+			VALUES(#{file_key},#{uploader_idx},#{ori_filename},#{new_filename},#{file_type},#{file_addr})
+	</insert>
 	
 	<!-- 회의실 정보보기 -->  
 	<select id="meetingDetail" resultType="map">
@@ -30,9 +54,15 @@
 		    mr.room_idx = #{room_idx}
 	</select>
 	
+	<!-- 회의실 사진 보기 -->
+	<select id="meetingPhoto">
+		SELECT ori_filename, new_filename FROM file 
+			WHERE file_key = #{param1}
+	</select>
+	
 	<!-- 회의실별 회의 일정보기 --> 
 	<select id="getMeeting" resultType="com.toast.schedule.dto.MeetingDTO">
-		SELECT room_idx, meet_rent_empl_idx, meet_subject, meet_content, meet_start_date, meet_end_date 
+		SELECT meet_rent_idx,room_idx, meet_rent_empl_idx, meet_subject, meet_content, meet_start_date, meet_end_date 
 			FROM meeting_rent
 			WHERE room_idx=#{room_idx}
 	</select>
@@ -68,15 +98,29 @@
 			    meet_end_date = #{meet_end_date},
 			    room_idx = #{room_idx}
 			WHERE
-				meet_rent_empl_idx = #{meet_rent_empl_idx};
+				meet_rent_idx = #{meet_rent_idx}
 	</update>
 	
-	
+	<!-- 회의 일정 시간 수정 -->
+	<update id="dateUpdateMeeting" parameterType="com.toast.schedule.dto.MeetingDTO">
+		UPDATE meeting_rent
+			SET 
+				meet_start_date = #{meet_start_date},
+			    meet_end_date = #{meet_end_date}
+			WHERE
+				meet_rent_idx = #{meet_rent_idx}
+	</update>
 	
 	
 	<!-- 회의 참여 인원 수정 -->
 	
 	<!-- 회의 일정 삭제-->
+	<delete id="deleteMeeting">
+		DELETE FROM meeting_rent WHERE meet_rent_idx=#{param1}
+	</delete>
+	
+	
+	
 	
 	<!-- 회의 참여 인원 삭제 -->
 	
