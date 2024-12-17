@@ -26,6 +26,7 @@
 }
 
 .tst_container{
+    min-width: var(--tst-container-min-width);
     height: calc(100vh - var(--tst-topnav-height));
     margin: 0 auto;
     padding: 16px 0px 16px 20px;
@@ -40,7 +41,6 @@
 }
 
 .tst_container .tst_container_right{
-    min-width: calc(var(--tst-container-min-width) - var(--tst-container-margin) - var(--tst-leftnav-width));
     min-height: calc(100vh - var(--tst-container-margin));
     padding: var(--tst-topnav-height) var(--tst-container-margin) var(--tst-container-margin) var(--tst-leftnav-width);
 }

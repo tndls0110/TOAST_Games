@@ -18,7 +18,7 @@
     --tst-color-info: #bccee4;
     --tst-font-sans-serif: "Noto Sans KR", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --tst-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --tst-container-min-width: 1400px;
+    --tst-container-min-width: 1600px;
     --tst-container-margin: 16px;
     --tst-topnav-height: 50px;
     --tst-leftnav-width: 230px;
@@ -76,7 +76,7 @@ body{
     color: var(--tst-body-color);
     font-size: var(--tst-body-font-size);
     font-weight: var(--tst-body-font-weight);
-    font-family: var(--tst-font-sans-serif);
+    font-family: var(--tst-font-sans-serif), serif;
     line-height: var(--tst-body-line-height);
 }
 
@@ -98,7 +98,7 @@ h2{
 }
 
 h3{
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
 }
 
@@ -253,38 +253,58 @@ p.min{
 
 
 
-/* list > tab menu */
-
-.list_tab{
-    width: 100%;
-    margin: var(--tst-margin-vertical) 0;
-    padding: 0;
-    border-bottom: var(--tst-border-width) var(--tst-border-style) var(--tst-border-color);
-}
-
-.list_tab .list_tab_item{
-    margin: 0 0 -1px;
-    padding: var(--tst-form-padding);
-    color: var(--tst-color-medium);
-    font-weight: 400;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.list_tab .list_tab_item.list_tab_item_active{
-    border-bottom: 2px var(--tst-border-style) var(--tst-color-medium);
-    color: var(--tst-body-color);
-    font-weight: 600;
-}
-
-
-
 /* list > title tab */
 
 ul.tst_title.list_no_desc{
-    margin: 0 0 24px;
+    margin: 0 0 36px;
 }
 
+ul.tst_title .tst_title_item{
+    margin: 0 66px 0 -36px;
+    cursor: pointer;
+}
+
+ul.tst_title .tst_title_item *{
+    color: var(--tst-color-disabled);
+    font-weight: 600;
+}
+
+ul.tst_title .tst_title_item.tst_title_item_active *{
+    color: var(--tst-body-color);
+    font-weight: 800;
+}
+
+
+
+/* list > tab */
+
+.tst_tablist {
+    margin: 0 0 16px;
+}
+
+.tst_tablist .tst_tablist_item{
+    margin: 0 51px 0 -36px;
+    cursor: pointer;
+}
+
+.tst_tablist .tst_tablist_item *{
+    color: var(--tst-color-medium);
+    font-weight: 400;
+}
+
+.tst_tablist .tst_tablist_item.tst_tablist_item_active *{
+    color: var(--tst-body-color);
+    font-weight: 800;
+}
+
+.tst_search_container,
+.tst_search_container *{
+    display: inline-block;
+}
+
+.tst_search_container .input_min.input_underline{
+    width: 200px;
+}
 
 
 /* form, button */
@@ -306,7 +326,7 @@ button{
     border-radius: var(--tst-border-radius);
     display: block;
     font-size: var(--tst-form-font-size);
-    font-family: var(--tst-font-sans-serif);
+    font-family: var(--tst-font-sans-serif), serif;
 }
 
 input[type="text"],
@@ -325,6 +345,15 @@ textarea{
 
 .input_caution{
     border-color: var(--tst-form-invalid-border-color);
+}
+
+.input_min{
+    padding: 0 0 2px;
+}
+
+.input_underline{
+    border: none;
+    border-bottom: var(--tst-border-width) var(--tst-border-style) var(--tst-color-dark);
 }
 
 input[type="submit"],
