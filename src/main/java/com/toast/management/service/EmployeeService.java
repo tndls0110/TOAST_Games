@@ -112,8 +112,27 @@ public class EmployeeService {
 	// 인사발령 서비스
 	public void employeeAppoDo(String empl_idx, String dept_idx, String position_idx, String duty_idx,
 			String movein_date) {
+		AppointmentDTO appolast = new AppointmentDTO();
+		appolast = employeeDAO.employeeAppolast(empl_idx);
+		if(appolast==null) { // 이전 인사발령 이력이 없으면
+			employeeDAO.employeeAppoDo(empl_idx,dept_idx,position_idx,duty_idx,movein_date);
+		}
+		else { // 인사발령이력이 있으면
+		int appo_idx =appolast.getAppo_idx();
+			employeeDAO.employeeAppoDo(empl_idx,dept_idx,position_idx,duty_idx,movein_date);
+			
+			employeeDAO.employeeTransfer(appo_idx,movein_date);
+		}
 		
-		employeeDAO.employeeAppoDo(empl_idx,dept_idx,position_idx,duty_idx,movein_date);
+		
+	}
+
+	public void employeeChangeDo(String empl_idx, String statement_idx) {
+		if(statement_idx.equals("3")) { // 퇴직처리이면
+		employeeDAO.employeeResigDo(empl_idx,statement_idx);
+		}else {
+		employeeDAO.employeeChangeDo(empl_idx,statement_idx);
+		}
 	}
 	
 

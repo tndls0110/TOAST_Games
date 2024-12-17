@@ -24,6 +24,12 @@ public interface EmployeeDAO {
 
 	int employeeAppoDo(String empl_idx, String dept_idx, String position_idx, String duty_idx, String movein_date);
 
+	int employeeChangeDo(String empl_idx, String statement_idx);
+
+	int employeeResigDo(String empl_idx, String statement_idx);
+
+	int employeeTransfer(int appo_idx,String movein_date);
+
 	
 
 	

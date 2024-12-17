@@ -77,5 +77,16 @@ ORDER BY
 	insert into appointment (appo_empl_idx,dept_idx,position_idx,duty_idx,movein_date,update_date) values (#{param1},#{param2},#{param3},#{param4},#{param5},now())
 </insert>
 
+<update id="employeeChangeDo">
+	update employee set statement_idx = #{param2} where empl_idx = #{param1}
+</update>
+
+<update id="employeeResigDo">
+update employee set statement_idx = #{param2}, empl_resig_date = now() where empl_idx = #{param1}
+</update>
+
+<update id="employeeTransfer">
+update appointment set transfer_date = #{param2} where appo_idx = #{param1}
+</update>
 
 </mapper>

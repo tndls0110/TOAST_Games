@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,12 +96,12 @@
             <td id="appoLast_empl_id">${appoLast.appo_empl_idx}</td>
         </tr>
         <tr>
-            <th>부서 인덱스</th>
-            <td id="appoLast_dept_idx">${appoLast.dept_idx}</td>
+            <th>부서 이름</th>
+            <td id="appoLast_dept_idx">${appoLast.dept_name}</td>
         </tr>
         <tr>
-            <th>직책 인덱스</th>
-            <td id="appoLast_position_idx">${appoLast.position_idx}</td>
+            <th>직책 이름</th>
+            <td id="appoLast_position_idx">${appoLast.position_name}</td>
         </tr>
         <tr>
             <th>업무 인덱스</th>
@@ -127,7 +128,27 @@
             <td id="appoLast_update">${appoLast.update_date}</td>
         </tr>
     </table>
-
+	 <table border="1">
+        <tr>
+            <th>부서</th>
+            <th>직급</th>
+            <th>직책</th>
+            <th>직무</th>
+            <th>시작</th>
+            <th>종료</th>
+        </tr>
+        <c:forEach var="appo" items="${appoList}">
+        <tr>
+            <td id="appoList_dept_idx">${appo.dept_name}</td>        
+            <td id="appoList_position_idx">${appo.position_name}</td>
+            <td id="appoList_duty_idx">${appo.duty_name}</td>
+             <td id="appoList_empl_job">${appo.empl_job}</td>
+              <td id="appoList_movein_date">${appo.movein_date}</td>
+              <td id="appoList_transfer_date">${appo.transfer_date}</td>
+            </tr>
+        </c:forEach>
+    </table>
+	
     <h2>첨부파일 목록</h2>
     <table>
         <tr>
@@ -202,15 +223,14 @@
     
     <form id="changeForm" action="employeeChange.do" method="POST">
         <div>
-            <label for="newDepartment">새 부서:</label>
-            <select id="newDepartment" name="new_dept_idx">
-                <option value="">선택</option>
+            <label for="statement">근무상태:</label>
+            <select id="statement" name="statement_idx">
+                <option value="1">근무중</option>
+                <option value="2">휴직</option>
+                <option value="3">퇴직</option>
             </select>
         </div>
-        <div>
-            <label for="changeDate">변경 날짜:</label>
-            <input type="date" id="change_date" name="change_date">
-        </div>
+         <input type="hidden" id="empl_idx" name="empl_idx" value="${employee.empl_idx}">
         <div style="margin-top: 10px;">
             <button type="submit" id="submitChange">확인</button>
             <button type="button" id="closeChangeModal">취소</button>

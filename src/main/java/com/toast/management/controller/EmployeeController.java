@@ -82,7 +82,18 @@ public class EmployeeController {
 		
 		return "redirect:/employee_detail";
 	}
-
-
+	
+	@PostMapping(value="/employeeChange.do")
+	public String employeeChangeDo(@RequestParam String empl_idx,String statement_idx) {
+		
+		logger.info(empl_idx);
+		logger.info(statement_idx);
+		
+		// 처리한사원번호 >> 세션추가하고 세션아이디넣기 > 세션아이디로 사원번호 가져오기
+		
+		employeeService.employeeChangeDo(empl_idx,statement_idx);
+		
+		return "redirect:/employee_detail";
+	}
 	
 }
