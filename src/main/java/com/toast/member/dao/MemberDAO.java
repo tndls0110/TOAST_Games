@@ -1,5 +1,7 @@
 package com.toast.member.dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.toast.member.dto.MemberDTO;
@@ -7,11 +9,14 @@ import com.toast.member.dto.MemberDTO;
 @Mapper
 public interface MemberDAO {
 
+	boolean isValidId(String id);
+	
 	String login(String id);
 
 	String findId(String name, String email);
+	boolean isValidName(String name);
 
-	String findPw(String id, String email);
+	Map<String, String> findPw(String id, String email);
 
 	int UpdatePw(String id, String encryptPw);	
 

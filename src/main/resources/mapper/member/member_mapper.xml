@@ -3,6 +3,12 @@
 
 <mapper namespace="com.toast.member.dao.MemberDAO">
 
+	<select id="isValidId" parameterType="String" resultType="boolean">
+		SELECT COUNT(*) 
+		FROM employee 
+		WHERE empl_id = #{id}
+	</select>
+	
 	<select id="login" parameterType="String" resultType="String"> 
 		SELECT empl_pw 
 		FROM employee 
@@ -23,9 +29,15 @@
 		WHERE empl_name = #{name} AND empl_per_email = #{email} 
 	</select>
 	
-	<!-- 비밀번호 찾기: 아이디와 이메일로 조회 -->
-	<select id="findPw" parameterType="map" resultType="String"> 
-		SELECT empl_per_email 
+	<select id="isValidName" parameterType="String" resultType="boolean">
+		SELECT COUNT(*) 
+		FROM employee 
+		WHERE empl_name = #{name}
+	</select>
+	
+	<!-- 비밀번호 찾기: 아이디와 이메일로 조회 + name도 프론트에 보여주기 위해 같이 가져온다!! -->
+	<select id="findPw" parameterType="map" resultType="map"> 
+		SELECT empl_name, empl_per_email
 		FROM employee WHERE empl_id = #{id} AND empl_per_email = #{email} 
 	</select>
 	

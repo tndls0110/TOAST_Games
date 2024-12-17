@@ -2,11 +2,11 @@ package com.toast.member.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,6 +30,10 @@ public class MemberService {
 	// spring.servlet.multipart.location=C:/files 이 경로로 주입. !!! 파일 저장위치 !!!
     @Value("${spring.servlet.multipart.location}")
     private String uploadAddr;
+    
+    public boolean isValidId(String id) {
+		return memberDAO.isValidId(id);
+	}
 	
 	public boolean login(String id, String pw) {
 		String enc_pw = memberDAO.login(id);
@@ -43,8 +47,12 @@ public class MemberService {
 	public String findId(String name, String email) {
 		return memberDAO.findId(name, email);
 	}
+	
+	public boolean isValidName(String name) {
+		return memberDAO.isValidName(name);
+	}
 
-	public String findPw(String id, String email) {
+	public Map<String, String> findPw(String id, String email) {
 		return memberDAO.findPw(id, email);
 	}
 	
