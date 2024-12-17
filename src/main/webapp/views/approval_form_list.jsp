@@ -57,7 +57,7 @@
 
         for(var data of datas){
             console.log(data.form_subject); //분리한 이름 목록에 넣어주기
-            console.log(data.form_idx); //분리한 이름 목록에 넣어주기
+            console.log(data.form_idx); 
 
             $('#content_box').append('<div class = "form_item" onclick = "form_draw('+ data.form_idx+')">'+data.form_subject+'</div>');
         }
