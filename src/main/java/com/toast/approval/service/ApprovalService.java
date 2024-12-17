@@ -33,7 +33,7 @@ public class ApprovalService {
 
 
 
-	/*public int doc_write(int formIdx, String formContent, int empl_idx) {
+	public int doc_write(int formIdx, String formContent, int empl_idx) {
 		int doc_idx = 0;
 		//방금 저장한 idx 가져오기
 		//BoardDTO에 값 저장하기
@@ -46,9 +46,9 @@ public class ApprovalService {
 			logger.info("방금 insert한 idx :{}",doc_idx);
 		}
 		return doc_idx;
-	}*/
+	}
 
-//	public Map<String, Object> doc_get(int docIdx) {
-//		return approvalDAO.doc_get(docIdx);
-//	}
+	public Map<String, Object> doc_get(int docIdx) {
+		return approvalDAO.doc_get(docIdx);
+	}
 }

@@ -13,7 +13,7 @@ public interface ApprovalDAO {
 
     Map<String, Object> form(int idx);
 
-    //int doc_write(ApprovalDTO app_dto);
+    int doc_write(ApprovalDTO app_dto);
 
-    //Map<String, Object> doc_get(int docIdx);
+    Map<String, Object> doc_get(int docIdx);
 }
