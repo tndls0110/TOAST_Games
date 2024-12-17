@@ -46,33 +46,41 @@
   var editor = new RichTextEditor("#div_editor", config);
   window.onload = function initialize(){
 
-    console.log(value);
+
+    console.log("${form_idx}");
+    console.log("${doc_idx}");
 
 
-    $.ajax({
-      type : 'get',
-      url : 'doc_get.ajax',
-      data : {'idx': 2},
-      dataType : 'JSON',
-      success : function(data){
-        console.log(data);
-        // for (var d of Object.keys(data)){
-        //   console.log(d);
-        //   console.log(data[d]);
-        //   editor.setHTMLCode(data[d]);//편집기 안의 HTML code 설정
-        // }
+    //var doc_idx = "${doc_idx}";
+    var form_idx = "${form_idx}";
 
-      },
-      error : function(e){
-        console.log(e);
-      }
+      $.ajax({
+        type : 'get',
+        url : 'approval_form.ajax',
+        data : {'form_idx': form_idx},
+        dataType : 'JSON',
+        success : function(data){
+          console.log(data);
+          console.log(data.form_content);
+          editor.setHTMLCode(data.form_content);//편집기 안의 HTML code 설정
+          content_edit();
+        },
+        error : function(e){
+          console.log(e);
+        }
+      });
 
-
-       });
 
   }
 
 
+
+  function content_edit(){
+    $('td').attr('contenteditable');
+  }
+
+
+  //richtexteditor 상세
   //변수명을 바꾸려고 보니까 3군데에서 사용하고 있음
   var config = {}
   config.toolbar = "default"; //basic은 뭐가 적음, default는 뭐가 많음

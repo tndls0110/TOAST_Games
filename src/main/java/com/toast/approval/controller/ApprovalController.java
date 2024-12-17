@@ -42,34 +42,40 @@ public class ApprovalController {
 
 	@GetMapping (value = "/approval_form.ajax")
 	@ResponseBody
-	public Map<String, Object> approvalForm(String subject) {
-		Map<String, Object> data = approvalService.form(subject);
+	public Map<String, Object> approvalForm(int form_idx) {
+		Map<String, Object> data = approvalService.form(form_idx);
 		return data;
 	}
 
 
 
-	@RequestMapping (value = "/approval_write.go")
-	public String approvalWrite_go (Model model, int form_idx, String form_content) {
+	@PostMapping (value = "/approval_write.go")
+	public String approvalWrite_go (Model model, String form_idx) {
 		logger.info("approvalWrite_go 컨트롤러 도착");
-		logger.info("idx: " + form_idx);
-		logger.info("content: " + form_content);
-
+		logger.info("idx:{}", form_idx);
 		//세션 처리
-		String login_id = "rrarro845";
+		//int empl_idx = 10002;
 
 		//작성하기
 			//작성하기부터는 update로 하기
-		approvalService.doc_write(form_idx,form_content,login_id);
+		//int doc_idx = approvalService.doc_write(form_idx,form_content,empl_idx);
 		
 
 
-		model.addAttribute("form_content", form_content);
+		//model.addAttribute("form_content", form_content);
+		//model.addAttribute("doc_idx", doc_idx);
 		model.addAttribute("form_idx", form_idx);
+
 
 		return "approval_write";
 	}
 
-
-
+/*	@GetMapping (value = "/doc_get.ajax")
+	@ResponseBody
+	public Map<String,Object> doc_get (int doc_idx) {
+		logger.info("doc_get.ajax 컨트롤러 도착");
+		logger.info("doc_idx: " + doc_idx);
+		Map<String,Object> data = approvalService.doc_get(doc_idx);
+		return data;
+	}*/
 }
