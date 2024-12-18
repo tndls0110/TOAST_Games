@@ -1,0 +1,37 @@
+.tst_container{
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_box{
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.login_box{
+    width: 350px;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="password"]{
+    border-color: var(--tst-color-white);
+    background-color: var(--tst-color-white);
+}
+
+input[type="text"].input_caution,
+input[type="password"].input_caution{
+    border-color: var(--tst-form-invalid-border-color);
+}
+
+.list_tab {
+    border-color: var(--tst-color-white);
+}
+
+.result_box{
+    height: 180px;
+}
+
+.result_box h1{
+    margin: 0 auto;
+}
