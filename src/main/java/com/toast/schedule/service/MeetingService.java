@@ -35,6 +35,11 @@ public class MeetingService {
 	public List<Map<String, Object>> meetingGo() {
 		return meetingDao.meetingGo();		
 	}
+	
+	//사원 정보 가져오기
+	public List<Map<String, Object>> meetingParti() {
+		return meetingDao.meetingParti();
+	}
 
 	//회의실 정보 상세보기
 	public Map<String, Object> meetingDetail(int room_idx) {
@@ -150,6 +155,8 @@ public class MeetingService {
 	public int dateUpdateMeeting(MeetingDTO dto) {
 		return meetingDao.dateUpdateMeeting(dto);
 	}
+
+
 
 	//내가 포함된 일정만 보기
 	

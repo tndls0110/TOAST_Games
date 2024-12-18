@@ -14,6 +14,9 @@ public interface MeetingDAO {
 	//회의실 가기(회의실 이름+idx)
 	List<Map<String, Object>> meetingGo();
 
+	//사원정보가져오기
+	List<Map<String, Object>> meetingParti();
+	
 	//회의실 (정보) 추가
 	int roomAdd(MeetingDTO dto);
 	
@@ -43,6 +46,8 @@ public interface MeetingDAO {
 
 	//회의 일정 시간변경
 	int dateUpdateMeeting(MeetingDTO dto);
+
+
 
 
 
