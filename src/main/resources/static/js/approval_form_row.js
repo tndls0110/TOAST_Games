@@ -17,6 +17,8 @@ $('#html_rendering').on('click','#plus1',function(){
 
 $('#html_rendering').on('click','#minus1',function(){
     console.log("삭제버튼");
+    console.log(i);
+
     if(i>2){
         $('.copyRow').last().remove();
         i--;
