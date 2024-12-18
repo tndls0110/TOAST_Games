@@ -37,11 +37,18 @@
 		</dependency>
 		
 		
+
 		<!-- AES 암호화 -->
 		<dependency>
 		    <groupId>commons-codec</groupId>
 		    <artifactId>commons-codec</artifactId>
 		    <version>1.15</version> <!-- 최신 버전을 확인 후 사용 -->
+		</dependency>
+		
+		<!-- security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		
 		<!-- web socket -->
@@ -87,7 +94,20 @@
 	        <version>1.16</version>
 	    </dependency>
 
+		<!--  mail 라이브러리  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 	    
+	    <!--  lombok  -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	    
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
